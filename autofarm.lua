@@ -13,8 +13,22 @@ local function sendDiscordMessage(message)
     local data = {
         ["content"] = message
     }
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
     local jsonData = HttpService:JSONEncode(data)
-    HttpService:PostAsync(webhookURL, jsonData)
+
+    -- Make a POST request to Discord webhook
+    local success, response = pcall(function()
+        return HttpService:PostAsync(webhookURL, jsonData, Enum.HttpContentType.ApplicationJson, false, headers)
+    end)
+
+    -- Check if the request was successful
+    if success then
+        print("Discord message sent successfully.")
+    else
+        print("Error sending message: " .. response)
+    end
 end
 
 -- Send message when the script is executed
