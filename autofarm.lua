@@ -6,7 +6,7 @@ local HttpService = game:GetService("HttpService")
 local workspace = game:GetService("Workspace")
 
 -- Webhook URL (Replace with your Discord Webhook URL)
-local webhookURL = "https://discord.com/api/webhooks/1340048482634825819/gpC9EQIuxV-dAPujJX95SItLEu9MbtkXCjJavyUwuPZaavptC06J9AzrHiKgSHVzXE7B"
+local webhookURL = "YOUR_DISCORD_WEBHOOK_URL"
 
 -- Function to send message to Discord
 local function sendDiscordMessage(message)
@@ -64,12 +64,14 @@ local function acceptQuest()
             wait(1)
             replicatedStorage.Remotes.QuestAccept:FireServer(npc.Name)
             sendDiscordMessage(player.Name .. " accepted the quest!")
+            print("Quest Accepted for: " .. npc.Name)  -- Debug message
         end
     end
 end
 
 -- Function to handle mob farming
 local function farmMobs()
+    print("Starting Auto Farm...")  -- Debug message
     while autoFarmEnabled do
         local character = player.Character or player.CharacterAdded:Wait()
         local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -98,6 +100,7 @@ local function farmMobs()
             humanoidRootPart.CFrame = closestEnemy.HumanoidRootPart.CFrame * CFrame.new(0, 10, 3)  -- Float above mob
             wait(0.5)
             virtualUser:Button1Down(Vector2.new(0, 0))  -- Simulate attack
+            print("Attacking mob: " .. closestEnemy.Name)  -- Debug message
         end
         
         wait(1)
@@ -112,7 +115,10 @@ AutoFarmButton.MouseButton1Click:Connect(function()
     
     if autoFarmEnabled then
         selectedMob = MobSelection.Text
+        print("Selected Mob: " .. selectedMob)  -- Debug message
         acceptQuest()
         farmMobs()
+    else
+        print("Auto Farm Stopped")  -- Debug message
     end
 end)
