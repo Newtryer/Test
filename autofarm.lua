@@ -6,7 +6,7 @@ local HttpService = game:GetService("HttpService")
 local workspace = game:GetService("Workspace")
 
 -- Webhook URL (Replace with your Discord Webhook URL)
-local webhookURL = "YOUR_DISCORD_WEBHOOK_URL"
+local webhookURL = "https://discord.com/api/webhooks/1340051313886625824/vX3vQyQtRSCRbbJ8RikO5NHrFOnT0p-2nb2sj2ycH2enKjvPUx2bM3vkwumxl_WuVETN"
 
 -- Function to send message to Discord
 local function sendDiscordMessage(message)
