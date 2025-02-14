@@ -40,28 +40,36 @@ local MainFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local AutoFarmButton = Instance.new("TextButton")
 local MobSelection = Instance.new("TextBox")
+local TitleLabel = Instance.new("TextLabel")
 
 ScreenGui.Parent = game.CoreGui
 
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 MainFrame.Position = UDim2.new(0.4, 0, 0.4, 0)
-MainFrame.Size = UDim2.new(0, 200, 0, 200)
+MainFrame.Size = UDim2.new(0, 250, 0, 300)
 MainFrame.Active = true
 MainFrame.Draggable = true
 
 UICorner.Parent = MainFrame
 
+TitleLabel.Parent = MainFrame
+TitleLabel.Text = "Auto Farm Script"
+TitleLabel.TextSize = 24
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TitleLabel.Size = UDim2.new(1, 0, 0, 40)
+
 AutoFarmButton.Parent = MainFrame
 AutoFarmButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoFarmButton.Size = UDim2.new(1, -20, 0, 50)
-AutoFarmButton.Position = UDim2.new(0, 10, 0, 50)
+AutoFarmButton.Position = UDim2.new(0, 10, 0, 80)
 AutoFarmButton.Text = "Auto Farm (OFF)"
 AutoFarmButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 MobSelection.Parent = MainFrame
 MobSelection.Size = UDim2.new(1, -20, 0, 30)
-MobSelection.Position = UDim2.new(0, 10, 0, 110)
+MobSelection.Position = UDim2.new(0, 10, 0, 150)
 MobSelection.Text = "Enter Mob Name"
 MobSelection.TextColor3 = Color3.fromRGB(255, 255, 255)
 MobSelection.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -71,14 +79,16 @@ local selectedMob = ""
 
 -- Function to handle quest acceptance
 local function acceptQuest()
+    -- Loop through all NPCs in the workspace
     for _, npc in pairs(workspace.NPCs:GetChildren()) do
         if npc:FindFirstChild("HumanoidRootPart") and npc.Name:find("Quest") then
             -- Move to the NPC and accept quest
             player.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame
             wait(1)
             replicatedStorage.Remotes.QuestAccept:FireServer(npc.Name)
-            sendDiscordMessage(player.Name .. " accepted the quest!")
+            sendDiscordMessage(player.Name .. " accepted the quest: " .. npc.Name)
             print("Quest Accepted for: " .. npc.Name)  -- Debug message
+            break -- Stop after accepting the first quest
         end
     end
 end
@@ -90,15 +100,16 @@ local function farmMobs()
         local character = player.Character or player.CharacterAdded:Wait()
         local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
         local humanoid = character:WaitForChild("Humanoid")
-        
+
         -- Float in Air to Avoid Damage
         humanoid.PlatformStand = true
         humanoidRootPart.Velocity = Vector3.new(0, 50, 0)
-        
+
         -- Find Nearest Mob
         local closestEnemy = nil
         local minDistance = math.huge
-        
+
+        -- Search for mobs based on the selected name
         for _, enemy in pairs(workspace.Enemies:GetChildren()) do
             if enemy:FindFirstChild("HumanoidRootPart") and enemy:FindFirstChild("Humanoid") and enemy.Humanoid.Health > 0 and enemy.Name:lower():find(selectedMob:lower()) then
                 local distance = (humanoidRootPart.Position - enemy.HumanoidRootPart.Position).magnitude
@@ -116,7 +127,7 @@ local function farmMobs()
             virtualUser:Button1Down(Vector2.new(0, 0))  -- Simulate attack
             print("Attacking mob: " .. closestEnemy.Name)  -- Debug message
         end
-        
+
         wait(1)
     end
 end
@@ -126,7 +137,7 @@ AutoFarmButton.MouseButton1Click:Connect(function()
     autoFarmEnabled = not autoFarmEnabled
     AutoFarmButton.Text = autoFarmEnabled and "Auto Farm (ON)" or "Auto Farm (OFF)"
     AutoFarmButton.BackgroundColor3 = autoFarmEnabled and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
-    
+
     if autoFarmEnabled then
         selectedMob = MobSelection.Text
         print("Selected Mob: " .. selectedMob)  -- Debug message
